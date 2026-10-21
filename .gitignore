@@ -1,0 +1,73 @@
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.so
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# ---------- Jupyter ----------
+.ipynb_checkpoints/
+
+# ---------- Data (never version raw data) ----------
+data/*
+!data/README.md
+!data/.gitkeep
+*.csv
+*.parquet
+*.feather
+*.xlsx
+*.h5
+*.hdf5
+*.npz
+*.npy
+*.zip
+
+# ---------- Models and experiment outputs ----------
+models/
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+*.joblib
+*.pkl
+mlruns/
+wandb/
+lightning_logs/
+outputs/
+runs/
+
+# ---------- Secrets (never commit) ----------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*.json
+secrets*.json
+service-account*.json
+
+# ---------- OS / editors ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/*
+!.vscode/extensions.json

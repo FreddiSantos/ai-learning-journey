@@ -1,0 +1,45 @@
+[project]
+name = "project-name"
+version = "0.1.0"
+description = "<One sentence description>"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Pedro Freddi" }]
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+dev = [
+  "pytest>=9.1",
+  "pytest-cov>=7.1",
+  "ruff>=0.17",
+]
+
+[build-system]
+requires = ["uv_build>=0.13,<0.14"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "project_name"
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/F: erros básicos · I: ordem de imports · B: bugs comuns · UP: sintaxe moderna · SIM: simplificações
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.coverage.run]
+source = ["project_name"]
+branch = true
+
+[tool.coverage.report]
+# Falha se a cobertura cair abaixo de 80%. Ajuste conforme o projeto amadurecer.
+fail_under = 80
+show_missing = true

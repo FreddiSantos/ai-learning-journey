@@ -1,0 +1,16 @@
+# Faz o GitHub mostrar o botão "Cite this repository". Formato: https://citation-file-format.github.io
+cff-version: 1.2.0
+message: "If you use this project, please cite it as below."
+title: "<Project name>"
+abstract: "<One sentence description>"
+type: software
+authors:
+  - family-names: "Freddi"
+    given-names: "Pedro"
+    affiliation: "Federal University of São Carlos (UFSCar)"
+repository-code: "https://github.com/FreddiSantos/<repo>"
+license: MIT
+version: 0.1.0
+date-released: "2026-01-01"
+keywords:
+  - python

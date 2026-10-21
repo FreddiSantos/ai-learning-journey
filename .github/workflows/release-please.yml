@@ -1,0 +1,52 @@
+# Lê os commits da main (feat:, fix:, ...) e mantém um PR "chore(main): release X.Y.Z"
+# com CHANGELOG.md e versão atualizados. Ao fazer merge desse PR, cria a tag e a release.
+# Requer: Settings > Actions > General > "Allow GitHub Actions to create and approve pull requests"
+# (o script github-setup/scripts/Set-RepoDefaults.ps1 -AllowActionsPullRequests ativa).
+name: Release Please
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: release-please
+  cancel-in-progress: false
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - id: release
+        uses: googleapis/release-please-action@45996ed1f6d02564a971a2fa1b5860e934307cf7 # v5.0.0
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      # O release-please muda a versão no pyproject.toml, mas não sabe atualizar o uv.lock.
+      # Sem isto, o "uv sync --locked" do CI quebraria depois do merge do PR de release.
+      - name: Checkout release PR branch
+        if: steps.release.outputs.prs_created == 'true'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ fromJSON(steps.release.outputs.pr).headBranchName }}
+      - if: steps.release.outputs.prs_created == 'true'
+        uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - name: Sync uv.lock with the new version
+        if: steps.release.outputs.prs_created == 'true'
+        run: |
+          uv lock
+          if git diff --quiet uv.lock; then
+            echo "uv.lock já está em dia."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "chore: update uv.lock for release"
+          git push

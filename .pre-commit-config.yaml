@@ -1,0 +1,54 @@
+# Hooks que rodam antes de cada commit (e no CI, job "lint").
+# Instalar uma vez por clone:  uvx pre-commit install
+# Rodar em tudo:              uvx pre-commit run --all-files
+# O Dependabot atualiza as versões (rev) toda semana.
+default_install_hook_types: [pre-commit, commit-msg]
+default_stages: [pre-commit]
+
+repos:
+  # Higiene geral de arquivos
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: [--maxkb=1000] # bloqueia arquivos > 1 MB (dados e modelos vão fora do git)
+      - id: detect-private-key
+
+  # Lint e formatação de Python
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  # Mantém o uv.lock em dia com o pyproject.toml
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.13.4
+    hooks:
+      - id: uv-lock
+
+  # Remove saídas de notebooks (evita vazar dados e diffs gigantes)
+  - repo: https://github.com/kynan/nbstripout
+    rev: 0.9.1
+    hooks:
+      - id: nbstripout
+
+  # Detecta secrets (chaves de API, tokens) antes de virarem commit
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+
+  # Mensagem de commit no padrão Conventional Commits (feat:, fix:, docs: ...)
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.4.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
