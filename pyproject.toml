@@ -1,7 +1,7 @@
 [project]
-name = "project-name"
+name = "ai-learning-journey"
 version = "0.1.0"
-description = "<One sentence description>"
+description = "Public log of learning AI as a civil engineering student."
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]
@@ -21,7 +21,7 @@ requires = ["uv_build>=0.13,<0.14"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "project_name"
+module-name = "journey"
 
 [tool.ruff]
 line-length = 100
@@ -36,7 +36,7 @@ testpaths = ["tests"]
 addopts = "-ra"
 
 [tool.coverage.run]
-source = ["project_name"]
+source = ["journey"]
 branch = true
 
 [tool.coverage.report]

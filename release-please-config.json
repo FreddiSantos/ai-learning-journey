@@ -3,7 +3,7 @@
   "packages": {
     ".": {
       "release-type": "python",
-      "package-name": "project-name",
+      "package-name": "ai-learning-journey",
       "include-component-in-tag": false,
       "changelog-sections": [
         { "type": "feat", "section": "Features" },

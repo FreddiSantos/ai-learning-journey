@@ -1,84 +1,48 @@
-<!--
-TEMPLATE — checklist ao criar um projeto novo (apague este comentário no fim):
-1. Substitua todos os trechos entre <> neste README e no CITATION.cff.
-2. Renomeie src/project_name e ajuste "name" e "module-name" no pyproject.toml e "source" em [tool.coverage.run].
-3. Rode `uv lock` para atualizar o uv.lock.
-4. Adicione topics ao repositório (ex.: machine-learning, python, civil-engineering).
--->
+# 🧭 AI Learning Journey
 
-
-# <Project name>
-
-[![CI](https://github.com/FreddiSantos/<repo>/actions/workflows/ci.yml/badge.svg)](https://github.com/FreddiSantos/<repo>/actions/workflows/ci.yml)
+[![CI](https://github.com/FreddiSantos/ai-learning-journey/actions/workflows/ci.yml/badge.svg)](https://github.com/FreddiSantos/ai-learning-journey/actions/workflows/ci.yml)
+[![Update timeline](https://github.com/FreddiSantos/ai-learning-journey/actions/workflows/update-timeline.yml/badge.svg)](https://github.com/FreddiSantos/ai-learning-journey/actions/workflows/update-timeline.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-<One sentence: what this project does and for whom.>
+A public log of how I'm learning Artificial Intelligence as a **Civil Engineering student at UFSCar**: courses, projects, readings and milestones.
 
-> 🇧🇷 <Resumo de uma linha em português.>
+> 🇧🇷 Registro público da minha jornada em IA como estudante de Engenharia Civil na UFSCar.
 
-## Problem
+## 🗺️ Timeline
 
-<What problem does this solve? Why does it matter? Include context from civil engineering or AI if relevant.>
+<!-- TIMELINE:START -->
+🏁 3 milestones · 🚀 3 projects
 
-## Solution
+### Ongoing
 
-<How the project approaches the problem. Add an architecture diagram or a screenshot/GIF if possible.>
+- 🏁 Member of LIA — Artificial Intelligence Lab at UFSCar
+- 🏁 Member of PET Engenharia Civil at UFSCar
 
-## Getting started
+### 2026
 
-Requirements: [uv](https://docs.astral.sh/uv/) (it installs the right Python version automatically).
+- **Oct 2026** · 🚀 [Started python-project-template](https://github.com/FreddiSantos/python-project-template) — Template for Python and data science projects: CI, linting, tests and community files ready to go.
+- **Oct 2026** · 🚀 [Started github-setup](https://github.com/FreddiSantos/github-setup) — Versioned configuration for my GitHub workflow: bootstrap, templates and automation.
+- **Oct 2026** · 🚀 [Started ai-learning-journey](https://github.com/FreddiSantos/ai-learning-journey) — My public log of learning AI as a civil engineering student: courses, projects, readings and milestones.
+- **Oct 2026** · 🏁 [Set up a professional GitHub workflow](https://github.com/FreddiSantos/github-setup) — CI, security scanning, Conventional Commits and automated releases in every project.
+<!-- TIMELINE:END -->
+
+## How this works
+
+- Manual entries (courses, readings, milestones) live in [`journey.toml`](journey.toml).
+- New public repositories and releases on my GitHub are added automatically.
+- A [weekly GitHub Action](.github/workflows/update-timeline.yml) rebuilds the timeline above, and it also runs whenever `journey.toml` changes.
+
+Run it locally:
 
 ```bash
-git clone https://github.com/FreddiSantos/<repo>.git
-cd <repo>
 uv sync
-uv run pytest
+uv run python -m journey README.md            # with GitHub data
+uv run python -m journey README.md --offline  # only journey.toml
 ```
 
-<How to run the main script or notebook, e.g. `uv run python -m project_name`.>
+## 💬 Suggestions
 
-If the project uses API keys, copy `.env.example` to `.env` and fill it in. The `.env` file is never committed.
-
-### Project structure
-
-```text
-├── data/            # raw data (not versioned, see data/README.md)
-├── notebooks/       # exploration notebooks
-├── src/project_name # source code
-├── tests/           # automated tests
-└── pyproject.toml   # dependencies and tool settings
-```
-
-### Data
-
-<Where the data comes from, its license, and how to download it. Raw data is not versioned — see [data/README.md](data/README.md).>
-
-### Reproducibility
-
-- Dependencies are pinned in `uv.lock`.
-- Random seed: `SEED` in `.env` (default `42`), applied in <where it is set>.
-- Hardware used for the reported results: <CPU/GPU, RAM>.
-
-## Stack
-
-<Python · pandas · PyTorch · ...>
-
-## Results
-
-<Metrics, charts or sample outputs. Compare with a baseline when possible.>
-
-## Roadmap
-
-- [ ] <Next step>
-- [ ] <Next step>
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md). This project follows the [Code of Conduct](CODE_OF_CONDUCT.md).
-
-## Citation
-
-If this project helps your work, please cite it using the **Cite this repository** button (generated from [CITATION.cff](CITATION.cff)).
+Know a good course, paper or project idea at the intersection of **AI and civil engineering**? Share it in [Discussions](https://github.com/FreddiSantos/ai-learning-journey/discussions).
 
 ## License
 

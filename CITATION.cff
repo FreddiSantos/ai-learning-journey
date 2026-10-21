@@ -1,16 +1,17 @@
 # Faz o GitHub mostrar o botão "Cite this repository". Formato: https://citation-file-format.github.io
 cff-version: 1.2.0
 message: "If you use this project, please cite it as below."
-title: "<Project name>"
-abstract: "<One sentence description>"
+title: "AI Learning Journey"
+abstract: "Public log of learning AI as a civil engineering student."
 type: software
 authors:
   - family-names: "Freddi"
     given-names: "Pedro"
     affiliation: "Federal University of São Carlos (UFSCar)"
-repository-code: "https://github.com/FreddiSantos/<repo>"
+repository-code: "https://github.com/FreddiSantos/ai-learning-journey"
 license: MIT
 version: 0.1.0
-date-released: "2026-01-01"
+date-released: "2026-10-21"
 keywords:
-  - python
+  - machine-learning
+  - learning-journal

@@ -1,0 +1,41 @@
+# Regenera a linha do tempo do README a partir do journey.toml e da API do GitHub.
+# Para desativar: Actions > Update timeline > "Disable workflow".
+name: Update timeline
+
+on:
+  schedule:
+    - cron: "0 8 * * 1" # segundas, 05:00 em Brasília
+  push:
+    branches: [main]
+    paths: [journey.toml, src/journey/**]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-timeline
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: astral-sh/setup-uv@1c37ad07a6a961277cf70c0d37d6f313000f5884 # v10.3.0
+      - name: Update README
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JOURNEY_LOGIN: ${{ github.repository_owner }}
+        run: uv run --locked python -m journey README.md
+      - name: Commit if changed
+        run: |
+          if git diff --quiet README.md; then
+            echo "Nada mudou."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "docs(timeline): update README timeline"
+          git push

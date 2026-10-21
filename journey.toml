@@ -1,0 +1,31 @@
+# Linha do tempo da jornada em IA. Edite este arquivo para adicionar entradas;
+# o workflow "Update timeline" regenera o README (toda segunda e a cada push neste arquivo).
+#
+# Campos de cada [[entry]]:
+#   date     = "AAAA-MM" (deixe vazio "" para algo em andamento, sem data definida)
+#   kind     = "milestone" | "course" | "project" | "reading" | "learning"
+#   title    = texto curto
+#   link     = URL (opcional)
+#   notes    = uma frase (opcional)
+
+[github]
+# Repositórios públicos e releases entram sozinhos como "project".
+# Liste aqui os que NÃO devem aparecer na linha do tempo.
+exclude = ["FreddiSantos"]
+
+[[entry]]
+date = ""
+kind = "milestone"
+title = "Member of LIA — Artificial Intelligence Lab at UFSCar"
+
+[[entry]]
+date = ""
+kind = "milestone"
+title = "Member of PET Engenharia Civil at UFSCar"
+
+[[entry]]
+date = "2026-10"
+kind = "milestone"
+title = "Set up a professional GitHub workflow"
+link = "https://github.com/FreddiSantos/github-setup"
+notes = "CI, security scanning, Conventional Commits and automated releases in every project."
