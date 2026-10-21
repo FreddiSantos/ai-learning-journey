@@ -11,7 +11,7 @@ A public log of how I'm learning Artificial Intelligence as a **Civil Engineerin
 ## 🗺️ Timeline
 
 <!-- TIMELINE:START -->
-🏁 3 milestones · 🚀 3 projects
+🏁 3 milestones · 🚀 4 projects
 
 ### Ongoing
 
@@ -24,6 +24,7 @@ A public log of how I'm learning Artificial Intelligence as a **Civil Engineerin
 - **Oct 2026** · 🚀 [Started github-setup](https://github.com/FreddiSantos/github-setup) — Versioned configuration for my GitHub workflow: bootstrap, templates and automation.
 - **Oct 2026** · 🚀 [Started ai-learning-journey](https://github.com/FreddiSantos/ai-learning-journey) — My public log of learning AI as a civil engineering student: courses, projects, readings and milestones.
 - **Oct 2026** · 🏁 [Set up a professional GitHub workflow](https://github.com/FreddiSantos/github-setup) — CI, security scanning, Conventional Commits and automated releases in every project.
+- **Oct 2026** · 🚀 [Released python-project-template v0.2.0](https://github.com/FreddiSantos/python-project-template/releases/tag/v0.2.0)
 <!-- TIMELINE:END -->
 
 ## How this works
