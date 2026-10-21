@@ -13,11 +13,6 @@ A public log of how I'm learning Artificial Intelligence as a **Civil Engineerin
 <!-- TIMELINE:START -->
 🏁 3 milestones · 🚀 4 projects
 
-### Ongoing
-
-- 🏁 Member of LIA — Artificial Intelligence Lab at UFSCar
-- 🏁 Member of PET Engenharia Civil at UFSCar
-
 ### 2026
 
 - **Oct 2026** · 🚀 [Started python-project-template](https://github.com/FreddiSantos/python-project-template) — Template for Python and data science projects: CI, linting, tests and community files ready to go.
@@ -25,6 +20,8 @@ A public log of how I'm learning Artificial Intelligence as a **Civil Engineerin
 - **Oct 2026** · 🚀 [Started ai-learning-journey](https://github.com/FreddiSantos/ai-learning-journey) — My public log of learning AI as a civil engineering student: courses, projects, readings and milestones.
 - **Oct 2026** · 🏁 [Set up a professional GitHub workflow](https://github.com/FreddiSantos/github-setup) — CI, security scanning, Conventional Commits and automated releases in every project.
 - **Oct 2026** · 🚀 [Released python-project-template v0.2.0](https://github.com/FreddiSantos/python-project-template/releases/tag/v0.2.0)
+- **Sep 2026** · 🏁 Joined LIA — Artificial Intelligence Lab at UFSCar
+- **Jun 2026** · 🏁 Joined PET Engenharia Civil at UFSCar
 <!-- TIMELINE:END -->
 
 ## How this works
