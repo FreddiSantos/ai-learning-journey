@@ -22,7 +22,7 @@ repos:
 
   # Lint e formatação de Python
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.17.2
+    rev: v0.17.3
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -30,7 +30,7 @@ repos:
 
   # Mantém o uv.lock em dia com o pyproject.toml
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.13.5
+    rev: 0.13.6
     hooks:
       - id: uv-lock
 
@@ -48,7 +48,7 @@ repos:
 
   # Mensagem de commit no padrão Conventional Commits (feat:, fix:, docs: ...)
   - repo: https://github.com/compilerla/conventional-pre-commit
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: conventional-pre-commit
         stages: [commit-msg]
