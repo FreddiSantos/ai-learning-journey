@@ -1,6 +1,6 @@
 [project]
 name = "ai-learning-journey"
-version = "0.1.0"
+version = "0.2.0"
 description = "Public log of learning AI as a civil engineering student."
 readme = "README.md"
 license = "MIT"
