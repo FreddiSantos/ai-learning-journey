@@ -22,7 +22,7 @@ repos:
 
   # Lint e formatação de Python
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.17.5
+    rev: v0.17.6
     hooks:
       - id: ruff-check
         args: [--fix]
@@ -30,13 +30,13 @@ repos:
 
   # Mantém o uv.lock em dia com o pyproject.toml
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.13.8
+    rev: 0.13.9
     hooks:
       - id: uv-lock
 
   # Remove saídas de notebooks (evita vazar dados e diffs gigantes)
   - repo: https://github.com/kynan/nbstripout
-    rev: 0.9.1
+    rev: 0.9.2
     hooks:
       - id: nbstripout
 
